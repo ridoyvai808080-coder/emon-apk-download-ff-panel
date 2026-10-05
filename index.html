@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EMON Panel — Download</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Noto Sans Bengali,sans-serif;background:linear-gradient(135deg,#090b16,#17102c);color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.card{width:min(470px,100%);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(18px);border-radius:24px;padding:28px;box-shadow:0 20px 70px rgba(0,0,0,.4)}
+.logo{width:72px;height:72px;border-radius:20px;margin:auto;background:linear-gradient(135deg,#7c3aed,#06b6d4);display:grid;place-items:center;font-size:28px;font-weight:900}
+h1{text-align:center;margin:18px 0 6px;font-size:26px}p{text-align:center;color:#c9c8d7;line-height:1.6}
+input{width:100%;padding:15px;border-radius:14px;border:1px solid #3b3852;background:#0f1020;color:white;outline:none;font-size:16px;margin:14px 0}
+button,.action{width:100%;border:0;border-radius:14px;padding:15px;font-size:16px;font-weight:800;cursor:pointer;text-decoration:none;display:block;text-align:center}
+button{background:linear-gradient(90deg,#7c3aed,#06b6d4);color:white}.action{background:#fff;color:#151525;margin:16px 0 10px}
+.next{margin-top:10px;background:#22c55e}.disabled{opacity:.45;pointer-events:none}
+.small{font-size:13px;color:#a9a7b8}.step{display:none}.step.active{display:block}.err{color:#ff7b7b;min-height:22px;text-align:center;font-size:14px}
+.badge{text-align:center;font-size:13px;color:#bdb9d1;margin-bottom:16px}
+.wa{background:#25d366;color:#06220f}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="logo">E</div>
+<h1>EMON Panel</h1>
+<div class="badge">Secure Download • Step-by-Step Access</div>
+
+<section id="s1" class="step active">
+<p>অ্যাপ ডাউনলোড করতে প্রথমে পাসওয়ার্ড দিন।</p>
+<input id="pw" type="password" placeholder="Password লিখুন" autocomplete="off">
+<div id="err" class="err"></div>
+<button onclick="unlock()">Continue</button>
+</section>
+
+<section id="s2" class="step">
+<h1>TikTok Follow</h1>
+<p>TikTok আইডিতে গিয়ে Follow করুন। কাজ শেষ হলে নিচের বাটনে চাপুন।</p>
+<a class="action" target="_blank" rel="noopener" href="https://www.tiktok.com/@ffidsaler1587?_r=1&_t=ZS-9AIJitABmMP">🎵 TikTok ID খুলুন</a>
+<button class="next" onclick="go(3)">আমি Follow করেছি →</button>
+</section>
+
+<section id="s3" class="step">
+<h1>YouTube Subscribe</h1>
+<p>YouTube চ্যানেলে গিয়ে Subscribe করুন। তারপর পরের ধাপে যান।</p>
+<a class="action" target="_blank" rel="noopener" href="https://youtube.com/@toufikvai2010?si=cwQg3VYWPK3yIbnr">▶️ YouTube Channel খুলুন</a>
+<button class="next" onclick="go(4)">আমি Subscribe করেছি →</button>
+</section>
+
+<section id="s4" class="step">
+<h1>Facebook Follow</h1>
+<p>Facebook আইডিতে গিয়ে Follow করুন।</p>
+<a class="action" target="_blank" rel="noopener" href="https://www.facebook.com/share/1F4gm3a7ri/">📘 Facebook ID খুলুন</a>
+<p class="small">Facebook আইডিতে গিয়ে Follow করে পরের ধাপে যান।</p>
+<button class="next" onclick="go(5)">আমি Follow করেছি →</button>
+</section>
+
+<section id="s5" class="step">
+<h1>WhatsApp Help</h1>
+<p>প্রয়োজনে নিচের নম্বরে WhatsApp-এ যোগাযোগ করতে পারো।</p>
+<a class="action wa" target="_blank" rel="noopener" href="https://wa.me/8801344839207">💬 WhatsApp Help: 01344839207</a>
+<button class="next" onclick="go(6)">পরের ধাপে যান →</button>
+</section>
+
+<section id="s6" class="step">
+<h1>Download Ready</h1>
+<p>সব ধাপ সম্পন্ন হয়েছে। এখন EMON Panel APK ডাউনলোড করতে পারো।</p>
+<a class="action" href="./EMON-Panel-Sance-2.0.apk" download>⬇️ APK Download</a>
+<p class="small">ফাইল: EMON-Panel-Sance-2.0.apk</p>
+</section>
+</div>
+
+<script>
+const PASSWORD="emonnazrulsumon";
+function unlock(){
+ const v=document.getElementById('pw').value;
+ if(v===PASSWORD){go(2)}
+ else document.getElementById('err').textContent="Password সঠিক নয়। আবার চেষ্টা করুন।";
+}
+function go(n){
+ document.querySelectorAll('.step').forEach(x=>x.classList.remove('active'));
+ document.getElementById('s'+n).classList.add('active');
+ window.scrollTo(0,0);
+}
+document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')unlock()});
+</script>
+</body>
+</html>
